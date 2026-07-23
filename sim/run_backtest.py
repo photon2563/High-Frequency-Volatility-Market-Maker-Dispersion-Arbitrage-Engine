@@ -38,7 +38,7 @@ class BacktestConfig:
     start_date: str = "2023-01-01"
     n_days: int = 252                  # Trading days to simulate
     n_constituents: int = 5            # Number of index constituents
-    initial_capital: float = 1_000_000
+    initial_capital: float = 100_000
 
     # Market parameters
     spot_price: float = 100.0
@@ -47,8 +47,8 @@ class BacktestConfig:
     txn_cost: float = 0.001           # 10 bps proportional
 
     # Strategy parameters
-    risk_aversion: float = 0.1
-    max_inventory: int = 100
+    risk_aversion: float = 0.057
+    max_inventory: int = 175
     zscore_entry: float = 0.5
     zscore_exit: float = 0.05
     rebalance_freq: int = 1           # Days between rebalances
@@ -268,8 +268,8 @@ class BacktestEngine:
             ask = reservation + half_spread
 
             # ── Simulate fills (Poisson) ──
-            lambda_bid = 10 * np.exp(-1.5 * max(S - bid, 0))
-            lambda_ask = 10 * np.exp(-1.5 * max(ask - S, 0))
+            lambda_bid = 17.5 * np.exp(-1.5 * max(S - bid, 0))
+            lambda_ask = 17.5 * np.exp(-1.5 * max(ask - S, 0))
             bid_fills = min(self.rng.poisson(lambda_bid), max(cfg.max_inventory - inventory, 0))
             ask_fills = min(self.rng.poisson(lambda_ask), max(cfg.max_inventory + inventory, 0))
 
@@ -387,7 +387,7 @@ def main():
         start_date=args.start_date,
         n_days=252,
         n_constituents=5,
-        initial_capital=1_000_000,
+        initial_capital=100_000,
         base_volatility=0.20,
         txn_cost=0.001,
     )

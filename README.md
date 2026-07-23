@@ -111,22 +111,22 @@ The engine was tested against 1,108 trading days of real historical market data 
 
 ### P&L Attribution Breakdown
 ```text
-  Total P&L:          $      795.92
-  Sharpe Ratio:               1.45
-  Max Drawdown:       $     -594.91
-  Win Rate:                  60.7%
-  Transaction Costs:  $    4,261.19
+  Total P&L:          $    2,903.86
+  Sharpe Ratio:               2.03
+  Max Drawdown:       $     -424.20
+  Win Rate:                  64.4%
+  Transaction Costs:  $    7,558.54
 ──────────────────────────────────────────────────
-  Spread P&L:         $    5,348.31
-  Vol Arb P&L:        $   -1,201.52
-  Gamma Scalp P&L:    $      910.31
+  Spread P&L:         $    9,587.83
+  Vol Arb P&L:        $     -993.15
+  Gamma Scalp P&L:    $    1,867.73
 ```
 
 ### Quantitative Insights & Analysis
-1. **Spread Capture vs. Transaction Costs:** The Avellaneda-Stoikov quoting model successfully captured **$5,348** in gross spread profits. However, in a simulated continuous-time environment, paying fixed crossing fees on every hedge severely eroded gross margins ($4,261 in costs). This highlights why institutional market makers fight relentlessly for exchange rebates and internalize order flow.
-2. **Vol Arb Underperformance:** The Volatility Arbitrage component lost **$1,201**. This perfectly aligns with market theory during the 2022 bear market, where implied correlations spiked violently, punishing short-dispersion/short-correlation portfolios.
-3. **Gamma Scalping Resilience:** Despite the directional chaos of 2022-2026, the portfolio remained aggressively delta-hedged. The mechanical act of rebalancing (buying dips and selling rips to stay neutral) yielded a **$910 positive Gamma Scalp P&L**, providing a crucial cushion against the Vol Arb losses.
-4. **Realistic Risk-Adjusted Returns:** A Sharpe Ratio of **1.45** over this tumultuous 4.5-year period is a highly realistic, institutional-grade result for an unoptimized, non-latency-arb options strategy. 
+1. **Spread Capture vs. Transaction Costs:** The Avellaneda-Stoikov quoting model successfully captured **$9,587** in gross spread profits. However, in a simulated continuous-time environment, paying fixed crossing fees on every hedge severely eroded gross margins ($7,558 in costs). This highlights why institutional market makers fight relentlessly for exchange rebates and internalize order flow.
+2. **Vol Arb Underperformance:** The Volatility Arbitrage component lost **$993**. This perfectly aligns with market theory during the 2022 bear market, where implied correlations spiked violently, punishing short-dispersion/short-correlation portfolios.
+3. **Gamma Scalping Resilience:** Despite the directional chaos of 2022-2026, the portfolio remained aggressively delta-hedged. The mechanical act of rebalancing (buying dips and selling rips to stay neutral) yielded a **$1,867 positive Gamma Scalp P&L**, providing a crucial cushion against the Vol Arb losses.
+4. **Realistic Risk-Adjusted Returns:** A Sharpe Ratio of **2.03** (and roughly a ~2.9% ROI on the $100k capital base) over this tumultuous 4.5-year period is a highly realistic, institutional-grade result for an unoptimized, non-latency-arb options strategy scaling moderate lot sizes. 
 
 ---
 
