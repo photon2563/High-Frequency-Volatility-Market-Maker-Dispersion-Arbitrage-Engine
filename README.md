@@ -11,7 +11,7 @@ Designed for algorithmic trading environments (e.g., Da Vinci, Optiver, Citadel)
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The project is split across the "Fast Path" (C++17 headers) and the "Research/RL Path" (Python).
 
@@ -44,7 +44,7 @@ graph TB
 
 ---
 
-## 🧠 Core Quantitative Modules (C++)
+## Core Quantitative Modules (C++)
 
 ### 1. Pricing Engine & Volatility Surface (`pricing/`)
 * **Black-Scholes Pricer**: Computes theoretical prices and all first/second/third-order Greeks (Δ, Γ, ν, Θ, ρ, Vanna, Volga) in a single pass using `std::erfc`.
@@ -74,7 +74,7 @@ graph TB
 
 ---
 
-## 🤖 Reinforcement Learning & ML (Python)
+## Reinforcement Learning & ML (Python)
 
 To optimize the parameters of the stochastic models, the system wraps the C++ core into a Gymnasium MDP (Markov Decision Process).
 
@@ -86,7 +86,7 @@ To optimize the parameters of the stochastic models, the system wraps the C++ co
 
 ---
 
-## 📊 Backtesting & Sanity Checks
+## Backtesting & Sanity Checks
 
 The engine includes a full 252-day simulation pipeline (`sim/run_backtest.py`) that handles synthetic Geometric Brownian Motion generation or ingests real historical data via the `yfinance` API. 
 
@@ -99,7 +99,7 @@ In quantitative interviews and live trading, absolute mathematical correctness i
 
 ---
 
-## 📈 Real Market Data Performance (2022 - 2026)
+## Real Market Data Performance (2022 - 2026)
 
 The engine was tested against 1,108 trading days of real historical market data (Jan 2022 to mid-2026), capturing the highly volatile 2022 bear market and the subsequent AI-driven rally. 
 
@@ -130,7 +130,7 @@ The engine was tested against 1,108 trading days of real historical market data 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 * CMake 3.14+
